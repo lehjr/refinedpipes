@@ -31,7 +31,7 @@ public class NetworkManager extends WorldSavedData {
     }
 
     public static NetworkManager get(ServerWorld world) {
-        String name = NAME + "_" + world.getDimension().getType().getRegistryName().getNamespace() + "_" + world.getDimension().getType().getRegistryName().getPath();
+        String name = NAME + "_" + world.getDimensionKey().getRegistryName().getNamespace() + "_" + world.getDimensionKey().getRegistryName().getPath();
 
         return world.getSavedData().getOrCreate(() -> new NetworkManager(name, world), name);
     }

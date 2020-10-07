@@ -85,41 +85,41 @@ public class ExtractorAttachmentFactory implements AttachmentFactory {
 
     @Override
     public void addInformation(List<ITextComponent> tooltip) {
-        tooltip.add(new TranslationTextComponent("misc.refinedpipes.tier", new TranslationTextComponent("enchantment.level." + type.getTier())).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        tooltip.add(new TranslationTextComponent("misc.refinedpipes.tier", new TranslationTextComponent("enchantment.level." + type.getTier())).setStyle(Style.EMPTY.setFormatting(TextFormatting.YELLOW)));
 
         ITextComponent itemsToExtract = new StringTextComponent(StringUtil.formatNumber(type.getItemsToExtract()) + " ")
-            .appendSibling(new TranslationTextComponent("misc.refinedpipes.item" + (type.getItemsToExtract() == 1 ? "" : "s")))
-            .setStyle(new Style().setColor(TextFormatting.WHITE));
+            .append(new TranslationTextComponent("misc.refinedpipes.item" + (type.getItemsToExtract() == 1 ? "" : "s")))
+            .setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE));
 
         float itemSecondsInterval = type.getItemTickInterval() / 20F;
         ITextComponent itemTickInterval = new StringTextComponent(StringUtil.formatNumber(itemSecondsInterval) + " ")
-            .appendSibling(new TranslationTextComponent("misc.refinedpipes.second" + (itemSecondsInterval == 1 ? "" : "s")))
-            .setStyle(new Style().setColor(TextFormatting.WHITE));
+            .append(new TranslationTextComponent("misc.refinedpipes.second" + (itemSecondsInterval == 1 ? "" : "s")))
+            .setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE));
 
         tooltip.add(new TranslationTextComponent(
             "tooltip.refinedpipes.extractor_attachment.item_extraction_rate",
             itemsToExtract,
             itemTickInterval
-        ).setStyle(new Style().setColor(TextFormatting.GRAY)));
+        ).setStyle(Style.EMPTY.setFormatting(TextFormatting.GRAY)));
 
         ITextComponent fluidsToExtract = new StringTextComponent(StringUtil.formatNumber(type.getFluidsToExtract()) + " mB")
-            .setStyle(new Style().setColor(TextFormatting.WHITE));
+            .setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE));
 
         float fluidSecondsInterval = type.getFluidTickInterval() / 20F;
         ITextComponent fluidTickInterval = new StringTextComponent(StringUtil.formatNumber(fluidSecondsInterval) + " ")
-            .appendSibling(new TranslationTextComponent("misc.refinedpipes.second" + (fluidSecondsInterval == 1 ? "" : "s")))
-            .setStyle(new Style().setColor(TextFormatting.WHITE));
+            .append(new TranslationTextComponent("misc.refinedpipes.second" + (fluidSecondsInterval == 1 ? "" : "s")))
+            .setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE));
 
         tooltip.add(new TranslationTextComponent(
             "tooltip.refinedpipes.extractor_attachment.fluid_extraction_rate",
             fluidsToExtract,
             fluidTickInterval
-        ).setStyle(new Style().setColor(TextFormatting.GRAY)));
+        ).setStyle(Style.EMPTY.setFormatting(TextFormatting.GRAY)));
 
         tooltip.add(new TranslationTextComponent(
             "tooltip.refinedpipes.extractor_attachment.filter_slots",
-            new StringTextComponent("" + type.getFilterSlots()).setStyle(new Style().setColor(TextFormatting.WHITE))
-        ).setStyle(new Style().setColor(TextFormatting.GRAY)));
+            new StringTextComponent("" + type.getFilterSlots()).setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE))
+        ).setStyle(Style.EMPTY.setFormatting(TextFormatting.GRAY)));
 
         addAbilityToInformation(tooltip, type.getCanSetRedstoneMode(), "misc.refinedpipes.redstone_mode");
         addAbilityToInformation(tooltip, type.getCanSetWhitelistBlacklist(), "misc.refinedpipes.mode");
@@ -129,8 +129,8 @@ public class ExtractorAttachmentFactory implements AttachmentFactory {
 
     private void addAbilityToInformation(List<ITextComponent> tooltip, boolean possible, String key) {
         tooltip.add(
-            new StringTextComponent(possible ? "✓ " : "❌ ").appendSibling(new TranslationTextComponent(key))
-                .setStyle(new Style().setColor(possible ? TextFormatting.GREEN : TextFormatting.RED))
+            new StringTextComponent(possible ? "✓ " : "❌ ").append(new TranslationTextComponent(key))
+                .setStyle(Style.EMPTY.setFormatting(possible ? TextFormatting.GREEN : TextFormatting.RED))
         );
     }
 

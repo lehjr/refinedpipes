@@ -24,16 +24,16 @@ public class EnergyPipeBlockItem extends BaseBlockItem {
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
         super.addInformation(stack, world, tooltip, flag);
 
-        tooltip.add(new TranslationTextComponent("misc.refinedpipes.tier", new TranslationTextComponent("enchantment.level." + type.getTier())).setStyle(new Style().setColor(TextFormatting.YELLOW)));
+        tooltip.add(new TranslationTextComponent("misc.refinedpipes.tier", new TranslationTextComponent("enchantment.level." + type.getTier())).setStyle(Style.EMPTY.setFormatting(TextFormatting.YELLOW)));
 
         tooltip.add(new TranslationTextComponent(
             "tooltip.refinedpipes.energy_pipe.capacity",
-            new StringTextComponent(StringUtil.formatNumber(type.getCapacity()) + " FE").setStyle(new Style().setColor(TextFormatting.WHITE))
-        ).setStyle(new Style().setColor(TextFormatting.GRAY)));
+            new StringTextComponent(StringUtil.formatNumber(type.getCapacity()) + " FE").setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE))
+        ).setStyle(Style.EMPTY.setFormatting(TextFormatting.GRAY)));
 
         tooltip.add(new TranslationTextComponent(
             "tooltip.refinedpipes.energy_pipe.transfer_rate",
-            new StringTextComponent(StringUtil.formatNumber(type.getTransferRate()) + " FE/t").setStyle(new Style().setColor(TextFormatting.WHITE))
-        ).setStyle(new Style().setColor(TextFormatting.GRAY)));
+            new StringTextComponent(StringUtil.formatNumber(type.getTransferRate()) + " FE/t").setStyle(Style.EMPTY.setFormatting(TextFormatting.WHITE))
+        ).setStyle(Style.EMPTY.setFormatting(TextFormatting.GRAY)));
     }
 }

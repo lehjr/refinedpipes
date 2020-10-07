@@ -1,13 +1,26 @@
 modLoader="javafml"
-loaderVersion="[31,)"
+loaderVersion="[34,)"
 issueTrackerURL="https://github.com/refinedmods/refinedpipes"
+license="The MIT License (MIT)"
 [[mods]]
-modId="refinedpipes"
-version="${version}"
-displayName="Refined Pipes"
-updateJSONURL="https://refinedmods.com/refined-pipes/update.json"
-displayURL="https://refinedmods.com/refined-pipes"
-authors="Refined Mods"
-description='''
-Refined Pipes is a Minecraft mod that adds pipes.
-'''
+    modId="refinedpipes"
+    version="${version}"
+    displayName="Refined Pipes"
+    updateJSONURL="https://refinedmods.com/refined-pipes/update.json"
+    displayURL="https://refinedmods.com/refined-pipes"
+    authors="Refined Mods"
+    description='''
+    Refined Pipes is a Minecraft mod that adds pipes.
+    '''
+[[dependencies.mpalib]]
+    modId="forge"
+    mandatory=true
+    versionRange="[34,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.mpalib]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3]"
+    ordering="NONE"
+    side="BOTH"
